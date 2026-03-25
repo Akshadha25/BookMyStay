@@ -18,4 +18,9 @@ public class RoomInventory {
     public void bookRoom(String roomType) {
         inventory.put(roomType, inventory.get(roomType) - 1);
     }
+
+    // Added method to restore inventory on cancellation
+    public void incrementRoom(String roomType) {
+        inventory.put(roomType, inventory.getOrDefault(roomType, 0) + 1);
+    }
 }
