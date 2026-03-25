@@ -1,13 +1,21 @@
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class UseCase5BookingRequestQueue {
 
     public static void main(String[] args) {
 
-        BookingQueue queue = new BookingQueue();
+        Queue<Reservation> bookingQueue = new LinkedList<>();
 
-        queue.addRequest(new Reservation("Alice", "Single Room"));
-        queue.addRequest(new Reservation("Bob", "Double Room"));
-        queue.addRequest(new Reservation("Charlie", "Suite Room"));
+        bookingQueue.add(new Reservation("Akshadha", "Single Room"));
+        bookingQueue.add(new Reservation("Rahul", "Double Room"));
+        bookingQueue.add(new Reservation("Priya", "Suite Room"));
 
-        queue.displayQueue();
+        System.out.println("=== Booking Request Queue ===");
+
+        for (Reservation r : bookingQueue) {
+            System.out.println("Guest: " + r.getGuestName() +
+                               " | Room: " + r.getRoomType());
+        }
     }
 }
